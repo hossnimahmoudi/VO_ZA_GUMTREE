@@ -1,0 +1,53 @@
+
+BOT_NAME = 'url_gumtree'
+
+SPIDER_MODULES = ['url_gumtree.spiders']
+NEWSPIDER_MODULE = 'url_gumtree.spiders'
+
+ROBOTSTXT_OBEY = False
+
+TELNETCONSOLE_ENABLED = False
+
+HTTPCACHE_ENABLED = True
+HTTPCACHE_EXPIRATION_SECS = 1728000 # HTTPCACHE_IGNORE_MISSING = False(True)
+HTTPCACHE_DIR = './CACHE_GUMTREE_URL'
+HTTPCACHE_IGNORE_HTTP_CODES = [500, 502, 503, 504, 408, 416, 405, 403, 429, 302, 301, 508, 400,407,111]
+HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+ROTATING_PROXY_LIST =[
+"37.48.118.4:13200",
+"195.154.255.118:15009",
+"195.154.222.228:15009",
+"195.154.255.34:15009",
+"195.154.222.26:15009",
+"195.154.255.118:15010",
+"195.154.222.228:15010",
+"195.154.255.34:15010",
+"195.154.222.26:15010",
+"195.154.255.118:15011",
+"195.154.222.228:15011",
+"195.154.255.34:15011",
+"195.154.222.26:15011",
+"195.154.255.118:15012",
+"195.154.222.228:15012",
+"195.154.255.34:15012",
+"195.154.222.26:15012",
+"195.154.255.118:15013",
+"195.154.222.228:15013",
+"195.154.255.34:15013",
+"195.154.222.26:15013",
+"163.172.36.211:16001",
+"163.172.36.213:16001",
+"163.172.214.109:16001",
+"163.172.214.117:16001"
+]
+
+DOWNLOADER_MIDDLEWARES = {
+    # ...
+    #'httpIP.middlewares.RotateUserAgentMiddleware': 20,
+    #'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
+#    'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
+    #'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
+    # ...
+}
+
